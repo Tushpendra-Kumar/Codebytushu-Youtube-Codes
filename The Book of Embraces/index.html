@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Book of Embraces</title>
+    <link rel="stylesheet" href="/The Book of Embraces/index.css">
+    <script src="/The Book of Embraces/index.js"></script>
+</head>
+<body>
+    <section aria-labelledby="bookTitle">
+  <header>
+    <h1 id="bookTitle">The Book of Embraces</h1>
+    <h2>Eduardo Galeano</h2>
+  </header>
+
+  <article class="landing-article">
+    <figure>
+      <img src="https://assets.codepen.io/1149983/TheMan%20Background%20Removed-min.png" alt="Illustration of Eduardo Galeano" />
+
+      <blockquote cite="https://www.goodreads.com/quotes/10530759-scientists-say-we-are-made-of-atoms-but-a-little">
+        <p>
+          “Scientists say we are made of atoms, but a little bird told me we are
+          made of stories.”
+        </p>
+      </blockquote>
+
+      <figcaption>
+        Every word a small act of remembering. Stories about dictators and
+        shopping carts, his son's questions, a woman who sells stars
+      </figcaption>
+    </figure>
+
+    <button class="demo-button" popovertarget="poemPopover">
+      <span class="material-symbols-outlined" aria-hidden="true">auto_stories</span>
+      Enter his world
+    </button>
+  </article>
+</section>
+
+<div id="poemPopover" popover="auto" aria-labelledby="poemTitle">
+  <header>
+    <div class="header-actions">
+      <button class="icon-btn" popovertarget="poemPopover" popovertargetaction="hide" aria-label="Close Popover">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </header>
+
+  <article class="popover-body poem">
+    <h2 class="heading" id="poemTitle">The System</h2>
+    <img src="https://assets.codepen.io/1149983/hand%20Background%20Removed.png" alt="Illustration of a hand" />
+    <p>Functionaries don't function.</p>
+    <p>Politicians speak but say nothing.</p>
+    <p>Voters vote but don't elect.</p>
+    <p>The information media disinform.</p>
+    <img src="https://assets.codepen.io/1149983/book_1.png" alt="Open book illustration" />
+    <p>Schools teach ignorance.</p>
+    <p>Judges punish victims.</p>
+    <p>The military makes war against its compatriots.</p>
+    <p>The police don't fight crime because they are too busy committing it.</p>
+    <p>Bankruptcies are socialised while profits are privatised.</p>
+    <p>Money is freer than people are.</p>
+    <p>People are at the service of things.</p>
+  </article>
+
+  <footer class="dialog-footer">
+    <button class="secondary" popovertarget="poemPopover" popovertargetaction="hide">
+      <span class="material-symbols-outlined" aria-hidden="true">schedule</span>
+      Not now
+    </button>
+    <button popovertarget="confirmPopover" id="confirmBtn">
+      <span class="material-symbols-outlined" aria-hidden="true">edit_note</span>
+      I'm interested
+    </button>
+  </footer>
+</div>
+
+<div id="confirmPopover" class="confirm-popover" popover="auto" aria-labelledby="confirmHeading">
+  <header>
+    <h3 id="confirmHeading">
+      Stay Connected
+    </h3>
+    <div class="header-actions">
+      <button class="icon-btn" popovertarget="confirmPopover" popovertargetaction="hide" aria-label="Close popover">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="signupForm" class="popover-content">
+    <article>
+      <figure>
+        <blockquote cite="https://www.goodreads.com/quotes/9395113-many-little-people-in-little-places-doing-little-things-can">
+          <p>
+            “Many little people, in little places, doing little things, can
+            change the world.”
+          </p>
+        </blockquote>
+      </figure>
+      <p>
+        Receive stories and reflections from The Book of Embraces, delivered to your inbox.
+      </p>
+    </article>
+
+    <fieldset>
+      <legend class="sr-only">Email Subscription</legend>
+      <div class="input-root">
+        <div class="decorator" aria-hidden="true">
+          <span class="material-symbols-outlined">alternate_email</span>
+        </div>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="email@example.com" aria-describedby="emailHelp" class="input" />
+      </div>
+
+      <small class="helper-text" id="emailHelp">
+        We'll never share your email. Unsubscribe anytime.
+      </small>
+    </fieldset>
+  </main>
+
+  <footer>
+    <button type="button" popovertarget="welcomePopover" id="signupSubmitBtn">
+      <span class="material-symbols-outlined" aria-hidden="true">send</span>
+      Sign Up
+    </button>
+  </footer>
+</div>
+
+<div id="welcomePopover" class="welcome-popover" popover="auto" aria-labelledby="welcomeHeading">
+  <header>
+    <h3 id="welcomeHeading">
+      Welcome
+    </h3>
+    <div class="header-actions">
+      <button class="icon-btn" popovertarget="welcomePopover" popovertargetaction="hide" aria-label="Close popover">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </header>
+  <article class="popover-body welcome">
+    <figure>
+      <img src="https://assets.codepen.io/1149983/fishTrumpet.png" alt="Welcome Fish" />
+    </figure>
+
+    <blockquote cite="https://www.goodreads.com/quotes/605740-we-are-all-mortal-until-the-first-kiss-and-the">
+      <p>
+        "We are all mortal until the first kiss and the second glass of wine."
+      </p>
+    </blockquote>
+
+    <p>Your first story will arrive soon. Check your inbox.</p>
+  </article>
+
+  <footer>
+    <button popovertarget="welcomePopover" popovertargetaction="hide" class="secondary">
+      Close
+    </button>
+  </footer>
+</div>
+</body>
+</html>
