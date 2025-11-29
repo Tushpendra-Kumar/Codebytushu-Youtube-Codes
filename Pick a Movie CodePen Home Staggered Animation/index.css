@@ -1,0 +1,109 @@
+/* chosen card */
+.cards:has(:checked) {
+	
+	border: 2px dashed #888;
+	
+	/* cards that aren't chosen, when one has been */
+	.cards-wrapper:has(:checked) .cards:not(&) {
+		opacity: 0;
+		width: 0;
+		display: none;
+		transition: 0.3s calc(var(--n) * 0.2s) all;
+		transition-behavior: allow-discrete;
+		input {
+			pointer-events: none;
+		}
+	}
+	
+	/* cards after the chosen one */
+	& ~ .cards {
+		--n: calc(sibling-count() - sibling-index() + 1);
+		
+		/* cards not after the chosen one */
+		.cards:not(&) {
+			--n: sibling-index();
+		}
+	}
+}
+
+/* Other Styles */
+
+@layer base, layout;
+
+@layer layout {
+	.cards-wrapper {
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+	}
+	.cards {
+		width: 15vw;
+		aspect-ratio: 3/4.2;
+		contain: layout;
+		background: center / contain no-repeat;
+		box-shadow: 0 0 10px #ebecef, inset 0 0 10px #eee;
+		border-radius: 10px;
+		box-sizing: border-box;
+		&:nth-of-type(1) {
+			background-image: url("omoide.jpg");
+		}
+		&:nth-of-type(2) {
+			background-image: url("kazetachinu.jpg");
+		}
+		&:nth-of-type(3) {
+			background-image: url("howl.jpg");
+		}
+		&:nth-of-type(4) {
+			background-image: url("ponyo.jpg");
+		}
+		&:nth-of-type(5) {
+			background-image: url("baron.jpg");
+		}
+		input[type="checkbox"] {
+			position: absolute;
+			inset: 0;
+			
+			/* iOS */
+			width: auto;
+			height: auto;
+		}
+	}
+}
+
+@layer base {
+	body {
+		height: 100vh;
+		margin: 0;
+		display: grid;
+		place-content: center;
+		user-select: none;
+		-webkit-user-select: none;
+		cursor: default;
+		font: 14px "Alan Sans";
+	}
+	header {
+		text-align: center;
+		margin-bottom: 10px;
+		h1 {
+			font-size: max(2vw, 1.5em);
+		}
+	}
+	footer {
+		text-align: center;
+		position: fixed;
+		bottom: 1lh;
+		inset-inline: 0;
+		font-size: max(1vw, 1em);
+		* {
+			margin: 0;
+		}
+	}
+	input[type="checkbox"] {
+		appearance: none;
+		margin: 0;
+		cursor: pointer;
+	}
+	a {
+		color: unset;
+	}
+}

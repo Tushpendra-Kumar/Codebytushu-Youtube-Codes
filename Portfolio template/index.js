@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       scrollBtn.style.display = "none";
     }
-  }
+  }  
 
   // Function to scroll to the top of the page
   function scrollToTop() {
