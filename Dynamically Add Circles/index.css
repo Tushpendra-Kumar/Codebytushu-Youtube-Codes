@@ -1,0 +1,69 @@
+body {
+	background: #111;
+	padding: 40px;
+	font-family: sans-serif;
+	color: #fff;
+}
+
+.wrapper {
+	height:20px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.circle {
+	--i:0;
+	border:1px solid #111;;
+	position:absolute;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background:salmon;
+	transform: translateX(calc(var(--i) * 10px)) scale(calc(var(--i) * 0.1));
+	
+}
+
+.circle:hover {
+	background: #ff8c8c;
+}
+
+button {
+	padding: 10px 20px;
+	background: #32c098;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 16px;
+	text-shadow:1px 1px 2px rgb(0, 0, 0, 0.5);
+	transition: background 0.5s;
+}
+
+button:hover {
+	text-shadow:1px 1px 2px rgb(0, 0, 0, 0.8);
+	background: #2decb6;
+}
+
+p {
+	color:#CFD8DC;
+	font-size:1.1em;
+	line-height:1.5;
+}
+
+#output {
+	max-width:650px;
+}
+
+
+.message span {
+	font-family:monospace;
+	font-weight: bold;
+    color: #00e6ff;
+    padding: 3px 10px;
+    background: #002d43;
+    border-radius: 6px;
+}
+
+body pre.prettyprint {
+	margin:0;
+}
