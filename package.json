@@ -1,0 +1,29 @@
+{
+  "name": "codebytushu-youtube-codes",
+  "version": "1.0.0",
+  "description": "Repo for CodeByTushu YouTube tutorials — each folder contains code used in a 1-2 minute video.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tushpendra-Kumar/Codebytushu-Youtube-Codes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tushpendra-Kumar/Codebytushu-Youtube-Codes/issues"
+  },
+  "homepage": "https://github.com/Tushpendra-Kumar/Codebytushu-Youtube-Codes#readme",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "express": "^5.2.1",
+    "json-server": "^1.0.0-beta.3",
+    "package-name": "^0.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
