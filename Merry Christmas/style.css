@@ -1,0 +1,295 @@
+@import url(https://fonts.bunny.net/css?family=hachi-maru-pop:400|indie-flower:400|montez:400|parisienne:400|princess-sofia:400);
+
+@layer base, demo;
+
+@layer demo {
+  :root{
+    --animation-duration: 60s;
+		--degrees: 360deg; 
+		--degree-start: 0deg; 
+		--radius: min(35vw, 350px);
+    --pi: 3.141592653589793; /* one day we may have pi() */
+    
+    --noria-line-color: rgb(255 255 255 / .5);
+    
+    --noria-car-scale: 0.8; /* control spacing */
+    --noria-car-bg: rgb(3 46 21);
+    --noria-car-hover-scale: 1; /* increase size of hovered card if desired */
+    --noria-car-hover-others-opacity: .35; /* reduce opacity on non-hovered cars*/
+    --noria-car-line-color:  rgb(255 255 255 / .5);
+    
+    --icon-hover-y: -50%; /* distance to move icon on hover */
+    --icon-scale: .6;
+    --icon-hover-scale: .35;
+    
+    --h1-font-family: 'Parisienne', handwriting;
+    --h1-bg-color: radial-gradient(rgb(13, 84, 43) 10%,rgb(3 46 21));
+    --h1-text-color: rgb(240 177 0);
+    --h1-border-color: rgb(240 177 0);
+
+    --message-font-family: 'Indie Flower', handwriting;
+    --message-font-size: clamp(.65rem, 1.7vw + .04rem, 1rem);
+    --message-border: 1px dottet white;
+    --message-line-height: 1;
+  }
+  /* snowflake background */
+  body::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    opacity: .075;
+    background-image: url("https://raw.githubusercontent.com/cbolson/assets/f7d20bb8d35d77c9c1862ff6c1f1878c66d53b31/codepen/snowflake.svg");
+    background-size: 70vw;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  /* all body children are fixed at the center of the viewport and are circles */
+  body > *{
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    aspect-ratio: 1;
+    border-radius: 9in;
+  }
+
+  /* center message - Merry Christmas */
+  h1{
+    z-index: 3;
+		line-height: 1;
+    font-family: var(--h1-font-family);
+    font-size: clamp(1rem, 5vw + .045rem, 4rem);
+    color: var(--h1-text-color);
+   
+       background: var(--h1-bg-color);
+    border: 1px solid var(--h1-border-color);
+    padding: 0;
+    width: 9ch;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    isolation: isolate;
+    clip:text;
+   
+    
+    &::before{
+      content:'';
+      position:absolute;
+      inset: 10%;
+      border-radius: 50%;
+      /*background-image:url("https://raw.githubusercontent.com/cbolson/assets/refs/heads/main/codepen/xmas-icons/rotating-sparkle.gif");*/
+      background-image: url("https://raw.githubusercontent.com/cbolson/assets/f7d20bb8d35d77c9c1862ff6c1f1878c66d53b31/codepen/snowflake.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+       opacity: .15;
+      filter: invert(75%);
+      rotate: 15deg;
+      z-index: -1;
+      
+    }
+    
+ 
+
+  }
+  @keyframes --rotate-border{
+    to{ rotate: 1turn}
+  }
+  @keyframes --sparkle{
+    to{
+      opacity: 0;
+    }
+  }
+    
+  /* rotating animation on noria and car container */
+  .noria,
+  .circle-container{
+    animation-name: rotate-it;
+		animation-timing-function: linear;
+		animation-duration: var(--animation-duration);
+		animation-iteration-count: infinite;
+    transition: 
+      width 50ms ease-in-out, 
+      height 50ms ease-in-out;
+  }
+  .noria{
+    --noria-items: sibling-count();
+    --noria-line-color: rgb(255 255 255 / .5);
+    z-index: 0;
+    width: calc(var(--radius) * 2);
+    border: 1px solid var(--noria-line-color);
+    
+    /* lines */
+    &::before,i{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+    /* noria center circle */
+    &::before{
+      content: '';
+      width: calc(var(--radius) * 1.1);
+      aspect-ratio: 1;
+      border-radius: inherit;
+      border: inherit;
+    } 
+    /* noria cross lines */
+    & i{
+      --i: sibling-index();
+      --noria-line-angle: calc(
+        (var(--degrees) / var(--noria-items)) * var(--i) +
+        var(--degree-start)
+      );
+      width: 1px;
+      height: calc(var(--radius) * 2);
+      background: var(--noria-line-color);
+      rotate: var(--noria-line-angle);
+    }
+  }
+	.circle-container {
+		--items: sibling-count() ; /* don't count noria lines */
+    /* Icon size based on circumference */
+    --car-size: calc((2 * var(--pi) * var(--radius) / var(--items)) * var(--noria-car-scale));
+
+    /* ensure we are above the noria lines */
+    z-index: 1;
+  
+    /* if any element has hover, reduce the attention of the other icons */
+    &:has(:hover) > div:not(:hover) > * {
+      opacity: var(--noria-car-hover-others-opacity);
+    }
+
+    & > div {
+      --i: sibling-index(); 
+      --car-angle: calc(
+        (var(--degrees) / var(--items)) * var(--i) +
+        var(--degree-start)
+      );
+      --car-x: calc(50% + (var(--radius) * cos(var(--car-angle))));
+     --car-y: calc(50% + (var(--radius) * sin(var(--car-angle))));
+      
+      border: 1px solid var(--noria-car-line-color);
+      background: var(--noria-car-bg);
+      border-radius: 9in;
+      position: absolute;
+      left: var(--car-x);
+      top:  var(--car-y);
+      translate: -50% -50%;
+      width: var(--car-size);
+      height: var(--car-size);
+      aspect-ratio: 1;
+      transition-property:translate,opacity,scale, 
+      transition-duration: 150ms;
+      tranistion-timing-function: ease-in-out;
+      scale: var(--car-scale,1);
+      
+      /* reverse rotate to maintain horizontal */
+      animation: rotate-it linear var(--animation-duration, 10s) infinite reverse;
+
+      /* icon & message common properties */
+      & > *, &::before{
+        transition-property:scale, translate,opacity;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+        position: absolute;
+        inset: 0;
+      }
+      /* icon */
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: drop-shadow(0 0 0.75rem rgb(1 1 1 / .5));
+        scale: var(--icon-scale,1);
+        translate: 0 var(--icon-y,0);
+      }
+      /* hidden message */
+      &::before{
+        content: attr(data-msg);
+        display: grid;
+        place-content: center;
+        text-align: center;
+        padding: .5em;
+        border-radius: inherit;
+        background: rgb(3, 46, 21);
+        font-family: var(--message-font-family);
+        font-size: var(--message-font-size);
+        line-height: var(--message-line-height);
+        border: var(--message-border,none);
+        text-wrap: balane;
+        display: grid;
+        place-content: center;
+        opacity: var(--message-opacity,0);
+        scale: var(--message-scale,0);
+      }      
+      /* car hover - update custom properties */
+      &:hover {
+        z-index: 3; /* keep it above it's siblings if we have overlap - probably not needed */
+        --car-scale: var(--noria-car-hover-scale);
+        --icon-scale: var(--icon-hover-scale);
+        --icon-y: var(--icon-hover-y);
+        --message-opacity: 1;
+        --message-scale: 1;
+      }
+    }
+  }
+  
+  /* rotation  1 turn */
+  @keyframes rotate-it {
+    to { 
+      rotate: 1turn; 
+    }
+  }
+
+  /* 
+  for those browsers that don't support sibling-index() and sibling-count() 
+  If there are more or less itmes these will still need to be adjusted manually if we need to support older browsers
+  */
+  @supports not (order:sibling-index()) {
+  	 .noria{
+        --noria-items: 7;
+     }
+    .circle-container {
+        --items: 14;
+    }	
+    .noria,.circle-container{
+      & > *:nth-child(1)  { --i: 1; }
+      & > *:nth-child(2)  { --i: 2; }
+      & > *:nth-child(3)  { --i: 3; }
+      & > *:nth-child(4)  { --i: 4; }
+      & > *:nth-child(5)  { --i: 5; }
+      & > *:nth-child(6)  { --i: 6; }
+      & > *:nth-child(7)  { --i: 7; }
+      & > *:nth-child(8)  { --i: 8; }
+      & > *:nth-child(9)  { --i: 9; }
+      & > *:nth-child(10) { --i: 10;}
+      & > *:nth-child(11) { --i: 11;}
+      & > *:nth-child(12) { --i: 12;}
+      & > *:nth-child(13) { --i: 13;}
+      & > *:nth-child(14) { --i: 14;}
+	}
+}
+
+/* general styling not relevant for this demo */
+@layer base {
+	* {
+		box-sizing: border-box;
+	}
+	:root {
+    --clr-bg: rgb(70, 8, 9);
+    --clr-txt: rgb(245, 245, 245);
+    --clr-lines: rgb(255 255 255 / .25);
+	}
+	body {
+		background: radial-gradient(rgb(159, 7, 18), rgb(70, 8, 9),  black);
+		color: var(--clr-txt);
+		min-height: 100svh;
+		margin: 0;
+		padding: 2rem;
+		font-family: system-ui, sans-serif;
+		font-size: 1rem;
+		line-height: 1.5;
+	}
+}
