@@ -1,0 +1,453 @@
+/* --- RESET & BASE STYLES --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #111;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: white;
+}
+
+/* --- UTILITIES --- */
+.hidden { display: none; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-col { flex-direction: column; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* --- MOBILE FRAME --- */
+.mobile-frame {
+  width: 390px;
+  height: 844px;
+  background-color: black;
+  border-radius: 50px;
+  border: 8px solid #1f1f1f;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 60px -15px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Notch */
+.notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 35px;
+  background-color: #1f1f1f;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notch-camera {
+  width: 60px;
+  height: 16px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+/* --- HEADER & NAV --- */
+.status-bar-spacer { height: 48px; flex-shrink: 0; }
+
+.header {
+  padding: 8px 24px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #1c1c1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.brand-text {
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.badge-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+  border: 1px solid #1c1c1e;
+}
+
+/* --- HERO TEXT --- */
+.hero-section {
+  padding: 24px 24px;
+}
+.hero-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.gradient-text {
+  background: linear-gradient(to right, #c084fc, #db2777);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- CAROUSEL CONTAINER --- */
+.carousel-wrapper {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.carousel-track {
+  width: 280px; /* Exact width of one card */
+  margin: 0 auto;
+  display: flex;
+  gap: 0; /* Items abut */
+  overflow-x: auto;
+  padding: 32px 0;
+  scroll-snap-type: x mandatory;
+  align-items: center;
+  z-index: 10;
+  /* Hide Scrollbar */
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+/* --- PRODUCT CARD (3D LOGIC) --- */
+.product-card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  flex-shrink: 0;
+  scroll-snap-align: center;
+  perspective: 1000px;
+
+  /* Scroll Driven Animation */
+  animation: scale-on-scroll linear both;
+  animation-timeline: view(inline);
+}
+
+@keyframes scale-on-scroll {
+  0% { transform: scale(0.85); opacity: 0.5; filter: blur(2px); }
+  50% { transform: scale(1); opacity: 1; filter: blur(0px); }
+  100% { transform: scale(0.85); opacity: 0.5; filter: blur(2px); }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* Trigger Logic */
+.flip-checkbox:checked + .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Disable front interaction when flipped */
+.flip-checkbox:checked + .flip-card-inner .front-trigger {
+  pointer-events: none;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* FRONT FACE */
+.card-front {
+  background-color: #1c1c1e;
+}
+
+.front-trigger {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.image-area {
+  height: 60%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, #1c1c1e, transparent, transparent);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.brand-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 20;
+  padding: 4px 12px;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heart-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 40; /* Above trigger */
+  padding: 8px;
+  background-color: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.heart-btn:hover { color: #ef4444; }
+
+.front-content {
+  height: 40%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.glow-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  opacity: 0.8;
+  filter: blur(2px);
+}
+
+/* BACK FACE */
+.card-back {
+  background-color: #2c2c2e;
+  transform: rotateY(180deg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.close-btn:active { transform: scale(0.95); }
+
+.details-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-right: 48px; 
+}
+
+.details-desc {
+  font-size: 12px;
+  color: #9ca3af;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+/* Size Selection */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.size-option {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.size-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Checked Size State */
+.size-radio:checked + .size-label {
+  background-color: white;
+  color: black;
+  border-color: white;
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Cart Button Logic using :has() equivalent logic via sibling combinations within flex */
+.cart-container {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.cart-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  border: none;
+
+  /* Default Disabled State */
+  background-color: #3a3a3c;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.cart-btn-text-add { display: none; }
+.cart-btn-text-select { display: inline; }
+
+/* Logic: If any radio in the container is checked, style the button */
+/* Since we can't easily do container queries for this specific logic in pure CSS without a specific wrapper structure, 
+ we will use the :has() selector which is now widely supported */
+
+.card-back:has(.size-radio:checked) .cart-btn {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.1);
+}
+
+.card-back:has(.size-radio:checked) .cart-btn:active {
+  transform: scale(0.95);
+}
+
+.card-back:has(.size-radio:checked) .cart-btn-text-add { display: inline; }
+.card-back:has(.size-radio:checked) .cart-btn-text-select { display: none; }
+
+
+/* --- BOTTOM NAV --- */
+.bottom-nav {
+  height: 80px;
+  background-color: rgba(28, 28, 30, 0.8);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 8px;
+  align-items: center;
+}
+
+.nav-item {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.nav-item.active { color: white; }
+.nav-text { font-size: 10px; font-weight: 500; }
+
+/* Home Indicator */
+.home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 128px;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}

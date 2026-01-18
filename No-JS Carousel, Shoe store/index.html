@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-JS Carousel, Shoe store By Codebytushu</title>
+    <link rel="stylesheet" href="/No-JS Carousel, Shoe store/style.css">
+</head>
+<body>
+    
+    <div class="mobile-frame">
+  <!-- Notch -->
+  <div class="notch">
+      <div class="notch-camera"></div>
+  </div>
+
+  <div class="status-bar-spacer"></div>
+
+  <!-- Header -->
+  <div class="header">
+      <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+      <div class="brand-text">Nike Store</div>
+      <button class="icon-btn relative">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <div class="badge-dot"></div>
+      </button>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero-section">
+      <h1 class="hero-title">
+          Discover <br/>
+          <span class="gradient-text">New Styles By CodeByTushu</span>
+      </h1>
+  </div>
+
+  <!-- Carousel -->
+  <div class="carousel-wrapper">
+      <div class="carousel-track">
+
+          <!-- Product 1 -->
+          <div class="product-card group">
+              <input type="checkbox" id="product-1" class="hidden flip-checkbox">
+              <div class="flip-card-inner">
+                  <div class="card-face card-front">
+                      <label for="product-1" class="front-trigger"></label>
+                      <div class="image-area">
+                          <div class="image-overlay"></div>
+                          <div class="brand-tag">Nike</div>
+                          <button class="heart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                          </button>
+                          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Lumina X1">
+                      </div>
+                      <div class="front-content">
+                          <div>
+                              <div class="flex justify-between items-center" style="margin-bottom: 4px;">
+                                  <div>
+                                      <h3 style="font-size: 20px; font-weight: 700;">Lumina X1</h3>
+                                      <p style="font-size: 12px; color: #9ca3af; text-transform: uppercase; margin-top: 4px; font-weight: 500;">Pro Running</p>
+                                  </div>
+                                  <div class="flex items-center" style="gap: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px;">
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                      <span style="font-size: 12px; font-weight: 700;">4.8</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex justify-between items-center">
+                              <span style="font-size: 24px; font-weight: 700;">$189.00</span>
+                              <div style="width: 40px; height: 40px; border-radius: 50%; background: white; color: black; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(255,255,255,0.2);">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                              </div>
+                          </div>
+                          <div class="glow-bar" style="background-color: #ef4444;"></div>
+                      </div>
+                  </div>
+
+                  <div class="card-face card-back">
+                      <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                          <span style="font-size: 14px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">Details</span>
+                          <label for="product-1" class="close-btn">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                          </label>
+                      </div>
+                      <h3 class="details-title">Lumina X1</h3>
+                      <p class="details-desc">Engineered for marathon distances with our proprietary energy-return foam.</p>
+
+                      <div>
+                          <span style="font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Select Size (US)</span>
+                          <div class="size-grid">
+                              <div class="size-option"><input type="radio" name="size-p1" id="p1-s7" class="hidden size-radio"><label for="p1-s7" class="size-label">7</label></div>
+                              <div class="size-option"><input type="radio" name="size-p1" id="p1-s8" class="hidden size-radio"><label for="p1-s8" class="size-label">8</label></div>
+                              <div class="size-option"><input type="radio" name="size-p1" id="p1-s9" class="hidden size-radio"><label for="p1-s9" class="size-label">9</label></div>
+                              <div class="size-option"><input type="radio" name="size-p1" id="p1-s10" class="hidden size-radio"><label for="p1-s10" class="size-label">10</label></div>
+                              <div class="size-option"><input type="radio" name="size-p1" id="p1-s11" class="hidden size-radio"><label for="p1-s11" class="size-label">11</label></div>
+                          </div>
+                      </div>
+
+                      <div class="cart-container">
+                          <button class="cart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                              <span class="cart-btn-text-select">Select Size</span>
+                              <span class="cart-btn-text-add">Add to Cart</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="product-card group">
+              <input type="checkbox" id="product-2" class="hidden flip-checkbox">
+              <div class="flip-card-inner">
+                  <div class="card-face card-front">
+                      <label for="product-2" class="front-trigger"></label>
+                      <div class="image-area">
+                          <div class="image-overlay"></div>
+                          <div class="brand-tag">Nike</div>
+                          <button class="heart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                          </button>
+                          <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Air Flow Pro">
+                      </div>
+                      <div class="front-content">
+                          <div>
+                              <div class="flex justify-between items-center" style="margin-bottom: 4px;">
+                                  <div>
+                                      <h3 style="font-size: 20px; font-weight: 700;">Air Flow Pro</h3>
+                                      <p style="font-size: 12px; color: #9ca3af; text-transform: uppercase; margin-top: 4px; font-weight: 500;">Urban Comfort</p>
+                                  </div>
+                                  <div class="flex items-center" style="gap: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px;">
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                      <span style="font-size: 12px; font-weight: 700;">4.6</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex justify-between items-center">
+                              <span style="font-size: 24px; font-weight: 700;">$145.00</span>
+                              <div style="width: 40px; height: 40px; border-radius: 50%; background: white; color: black; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(255,255,255,0.2);">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                              </div>
+                          </div>
+                          <div class="glow-bar" style="background-color: #22c55e;"></div>
+                      </div>
+                  </div>
+
+                  <div class="card-face card-back">
+                      <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                          <span style="font-size: 14px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">Details</span>
+                          <label for="product-2" class="close-btn">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                          </label>
+                      </div>
+                      <h3 class="details-title">Air Flow Pro</h3>
+                      <p class="details-desc">Breathable mesh construction meets urban style. Perfect for the daily commute.</p>
+
+                      <div>
+                          <span style="font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Select Size (US)</span>
+                          <div class="size-grid">
+                              <div class="size-option"><input type="radio" name="size-p2" id="p2-s8" class="hidden size-radio"><label for="p2-s8" class="size-label">8</label></div>
+                              <div class="size-option"><input type="radio" name="size-p2" id="p2-s9" class="hidden size-radio"><label for="p2-s9" class="size-label">9</label></div>
+                              <div class="size-option"><input type="radio" name="size-p2" id="p2-s10" class="hidden size-radio"><label for="p2-s10" class="size-label">10</label></div>
+                              <div class="size-option"><input type="radio" name="size-p2" id="p2-s11" class="hidden size-radio"><label for="p2-s11" class="size-label">11</label></div>
+                              <div class="size-option"><input type="radio" name="size-p2" id="p2-s12" class="hidden size-radio"><label for="p2-s12" class="size-label">12</label></div>
+                          </div>
+                      </div>
+
+                      <div class="cart-container">
+                          <button class="cart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                              <span class="cart-btn-text-select">Select Size</span>
+                              <span class="cart-btn-text-add">Add to Cart</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="product-card group">
+              <input type="checkbox" id="product-3" class="hidden flip-checkbox">
+              <div class="flip-card-inner">
+                  <div class="card-face card-front">
+                      <label for="product-3" class="front-trigger"></label>
+                      <div class="image-area">
+                          <div class="image-overlay"></div>
+                          <div class="brand-tag">Nike</div>
+                          <button class="heart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                          </button>
+                          <img src="https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Court Vision">
+                      </div>
+                      <div class="front-content">
+                          <div>
+                              <div class="flex justify-between items-center" style="margin-bottom: 4px;">
+                                  <div>
+                                      <h3 style="font-size: 20px; font-weight: 700;">Court Vision</h3>
+                                      <p style="font-size: 12px; color: #9ca3af; text-transform: uppercase; margin-top: 4px; font-weight: 500;">Basketball</p>
+                                  </div>
+                                  <div class="flex items-center" style="gap: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px;">
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                      <span style="font-size: 12px; font-weight: 700;">4.9</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex justify-between items-center">
+                              <span style="font-size: 24px; font-weight: 700;">$210.00</span>
+                              <div style="width: 40px; height: 40px; border-radius: 50%; background: white; color: black; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(255,255,255,0.2);">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                              </div>
+                          </div>
+                          <div class="glow-bar" style="background-color: #3b82f6;"></div>
+                      </div>
+                  </div>
+
+                  <div class="card-face card-back">
+                      <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                          <span style="font-size: 14px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">Details</span>
+                          <label for="product-3" class="close-btn">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                          </label>
+                      </div>
+                      <h3 class="details-title">Court Vision</h3>
+                      <p class="details-desc">Maximum ankle support and grip for the hardwood. Dominate the court.</p>
+
+                      <div>
+                          <span style="font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Select Size (US)</span>
+                          <div class="size-grid">
+                              <div class="size-option"><input type="radio" name="size-p3" id="p3-s9" class="hidden size-radio"><label for="p3-s9" class="size-label">9</label></div>
+                              <div class="size-option"><input type="radio" name="size-p3" id="p3-s10" class="hidden size-radio"><label for="p3-s10" class="size-label">10</label></div>
+                              <div class="size-option"><input type="radio" name="size-p3" id="p3-s11" class="hidden size-radio"><label for="p3-s11" class="size-label">11</label></div>
+                              <div class="size-option"><input type="radio" name="size-p3" id="p3-s12" class="hidden size-radio"><label for="p3-s12" class="size-label">12</label></div>
+                              <div class="size-option"><input type="radio" name="size-p3" id="p3-s13" class="hidden size-radio"><label for="p3-s13" class="size-label">13</label></div>
+                          </div>
+                      </div>
+
+                      <div class="cart-container">
+                          <button class="cart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                              <span class="cart-btn-text-select">Select Size</span>
+                              <span class="cart-btn-text-add">Add to Cart</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card group">
+              <input type="checkbox" id="product-4" class="hidden flip-checkbox">
+              <div class="flip-card-inner">
+                  <div class="card-face card-front">
+                      <label for="product-4" class="front-trigger"></label>
+                      <div class="image-area">
+                          <div class="image-overlay"></div>
+                          <div class="brand-tag">Nike</div>
+                          <button class="heart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                          </button>
+                          <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Zenith Trek">
+                      </div>
+                      <div class="front-content">
+                          <div>
+                              <div class="flex justify-between items-center" style="margin-bottom: 4px;">
+                                  <div>
+                                      <h3 style="font-size: 20px; font-weight: 700;">Zenith Trek</h3>
+                                      <p style="font-size: 12px; color: #9ca3af; text-transform: uppercase; margin-top: 4px; font-weight: 500;">Trail Hiking</p>
+                                  </div>
+                                  <div class="flex items-center" style="gap: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px;">
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                      <span style="font-size: 12px; font-weight: 700;">4.7</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex justify-between items-center">
+                              <span style="font-size: 24px; font-weight: 700;">$175.00</span>
+                              <div style="width: 40px; height: 40px; border-radius: 50%; background: white; color: black; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(255,255,255,0.2);">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                              </div>
+                          </div>
+                          <div class="glow-bar" style="background-color: #f97316;"></div>
+                      </div>
+                  </div>
+
+                  <div class="card-face card-back">
+                      <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                          <span style="font-size: 14px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">Details</span>
+                          <label for="product-4" class="close-btn">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                          </label>
+                      </div>
+                      <h3 class="details-title">Zenith Trek</h3>
+                      <p class="details-desc">Waterproof, rugged, and ready for any terrain. Adventure awaits.</p>
+
+                      <div>
+                          <span style="font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Select Size (US)</span>
+                          <div class="size-grid">
+                              <div class="size-option"><input type="radio" name="size-p4" id="p4-s7" class="hidden size-radio"><label for="p4-s7" class="size-label">7</label></div>
+                              <div class="size-option"><input type="radio" name="size-p4" id="p4-s8" class="hidden size-radio"><label for="p4-s8" class="size-label">8</label></div>
+                              <div class="size-option"><input type="radio" name="size-p4" id="p4-s9" class="hidden size-radio"><label for="p4-s9" class="size-label">9</label></div>
+                              <div class="size-option"><input type="radio" name="size-p4" id="p4-s10" class="hidden size-radio"><label for="p4-s10" class="size-label">10</label></div>
+                          </div>
+                      </div>
+
+                      <div class="cart-container">
+                          <button class="cart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                              <span class="cart-btn-text-select">Select Size</span>
+                              <span class="cart-btn-text-add">Add to Cart</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="product-card group">
+              <input type="checkbox" id="product-5" class="hidden flip-checkbox">
+              <div class="flip-card-inner">
+                  <div class="card-face card-front">
+                      <label for="product-5" class="front-trigger"></label>
+                      <div class="image-area">
+                          <div class="image-overlay"></div>
+                          <div class="brand-tag">Nike</div>
+                          <button class="heart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                          </button>
+                          <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&q=80&w=1000" class="product-img" alt="Shadow Run">
+                      </div>
+                      <div class="front-content">
+                          <div>
+                              <div class="flex justify-between items-center" style="margin-bottom: 4px;">
+                                  <div>
+                                      <h3 style="font-size: 20px; font-weight: 700;">Shadow Run</h3>
+                                      <p style="font-size: 12px; color: #9ca3af; text-transform: uppercase; margin-top: 4px; font-weight: 500;">Night Series</p>
+                                  </div>
+                                  <div class="flex items-center" style="gap: 4px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px;">
+                                      <svg width="12" height="12" viewBox="0 0 24 24" fill="#facc15" stroke="#facc15" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                                      <span style="font-size: 12px; font-weight: 700;">4.5</span>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex justify-between items-center">
+                              <span style="font-size: 24px; font-weight: 700;">$159.00</span>
+                              <div style="width: 40px; height: 40px; border-radius: 50%; background: white; color: black; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 15px -3px rgba(255,255,255,0.2);">
+                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                              </div>
+                          </div>
+                          <div class="glow-bar" style="background-color: #1f2937;"></div>
+                      </div>
+                  </div>
+
+                  <div class="card-face card-back">
+                      <div class="flex justify-between items-center" style="margin-bottom: 16px;">
+                          <span style="font-size: 14px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.1em;">Details</span>
+                          <label for="product-5" class="close-btn">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                          </label>
+                      </div>
+                      <h3 class="details-title">Shadow Run</h3>
+                      <p class="details-desc">Reflective accents for night safety without compromising on stealth style.</p>
+
+                      <div>
+                          <span style="font-size: 12px; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 8px;">Select Size (US)</span>
+                          <div class="size-grid">
+                              <div class="size-option"><input type="radio" name="size-p5" id="p5-s8" class="hidden size-radio"><label for="p5-s8" class="size-label">8</label></div>
+                              <div class="size-option"><input type="radio" name="size-p5" id="p5-s9" class="hidden size-radio"><label for="p5-s9" class="size-label">9</label></div>
+                              <div class="size-option"><input type="radio" name="size-p5" id="p5-s10" class="hidden size-radio"><label for="p5-s10" class="size-label">10</label></div>
+                              <div class="size-option"><input type="radio" name="size-p5" id="p5-s11" class="hidden size-radio"><label for="p5-s11" class="size-label">11</label></div>
+                          </div>
+                      </div>
+
+                      <div class="cart-container">
+                          <button class="cart-btn">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                              <span class="cart-btn-text-select">Select Size</span>
+                              <span class="cart-btn-text-add">Add to Cart</span>
+                          </button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+  <!-- Bottom Nav -->
+  <div class="bottom-nav">
+      <button class="nav-item active">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="nav-text">Home</span>
+      </button>
+      <button class="nav-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="nav-text">Saved</span>
+      </button>
+      <button class="nav-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          <span class="nav-text">Alerts</span>
+      </button>
+      <button class="nav-item">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span class="nav-text">Profile</span>
+      </button>
+  </div>
+
+  <div class="home-indicator"></div>
+</div>
+
+
+</body>
+<script src="/No-JS Carousel, Shoe store/app.js"></script>
+</html>
