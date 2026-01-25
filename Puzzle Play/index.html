@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Play - CodeByTushu</title>
+    <link rel="stylesheet" href="/Puzzle Play/style.css">
+</head>
+<body>
+    
+    <div id="gsapWrapper">
+    <div id="gsapBody">
+        
+        <headerWrapper>
+            <header>
+                <hgroup>
+                    <h1 id="dataTitle">minesweeper</h1>
+                    <p><span id="dataDetected">Detected: 0/6</span> <span id="dataClicks">Clicks: 0</span> <span id="dataTime">Time: 0:00</span></p>
+                </hgroup>
+            </header>
+        </headerWrapper>
+
+        <div class="vBand bg"></div>
+        <div class="vBand light"></div>
+        <div class="vBand blur"></div>
+
+        <div id="world3d">
+
+            <div id="world3dCover"></div>
+                        
+            <div class="mine" id="p00"><div class="surface"></div></div>
+            <div class="mine" id="p01"><div class="surface"></div></div>
+            <div class="mine" id="p02"><div class="surface"></div></div>
+            <div class="mine" id="p03"><div class="surface"></div></div>
+            <div class="mine" id="p04"><div class="surface"></div></div>
+            <div class="mine" id="p05"><div class="surface"></div></div>
+
+            <div class="mine" id="p10"><div class="surface"></div></div>
+            <div class="mine" id="p11"><div class="surface"></div></div>
+            <div class="mine" id="p12"><div class="surface"></div></div>
+            <div class="mine" id="p13"><div class="surface"></div></div>
+            <div class="mine" id="p14"><div class="surface"></div></div>
+            <div class="mine" id="p15"><div class="surface"></div></div>
+
+            <div class="mine" id="p20"><div class="surface"></div></div>
+            <div class="mine" id="p21"><div class="surface"></div></div>
+            <div class="mine" id="p22"><div class="surface"></div></div>
+            <div class="mine" id="p23"><div class="surface"></div></div>
+            <div class="mine" id="p24"><div class="surface"></div></div>
+            <div class="mine" id="p25"><div class="surface"></div></div>
+
+            <div class="mine" id="p30"><div class="surface"></div></div>
+            <div class="mine" id="p31"><div class="surface"></div></div>
+            <div class="mine" id="p32"><div class="surface"></div></div>
+            <div class="mine" id="p33"><div class="surface"></div></div>
+            <div class="mine" id="p34"><div class="surface"></div></div>
+            <div class="mine" id="p35"><div class="surface"></div></div>
+
+            <div class="mine" id="p40"><div class="surface"></div></div>
+            <div class="mine" id="p41"><div class="surface"></div></div>
+            <div class="mine" id="p42"><div class="surface"></div></div>
+            <div class="mine" id="p43"><div class="surface"></div></div>
+            <div class="mine" id="p44"><div class="surface"></div></div>
+            <div class="mine" id="p45"><div class="surface"></div></div>
+
+            <div class="mine" id="p50"><div class="surface"></div></div>
+            <div class="mine" id="p51"><div class="surface"></div></div>
+            <div class="mine" id="p52"><div class="surface"></div></div>
+            <div class="mine" id="p53"><div class="surface"></div></div>
+            <div class="mine" id="p54"><div class="surface"></div></div>
+            <div class="mine" id="p55"><div class="surface"></div></div>
+
+        </div>
+
+        <div id="directions">
+            <div id="notTouch">
+                Mouse Clicks:<br>
+                <span id="leftClick">Clear</span>
+                <span id="rightClick">Detect</span>
+            </div>
+            <div id="touch">
+                <div id="touchSwitch"><div id="toggle"></div></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div id="popupWrapper">
+    <div id="popup">
+        <span id="boom">Boom</span>
+        <span id="cleared">Cleared</span>
+        <div id="playAgain">Play Again</div>
+    </div>
+</div>
+
+<input id="focusInput" />
+
+
+
+
+<svg xmlns="http://www.w3.org/2000/svg" role="none" width="0" width="0" style="position:absolute; z-index:5;">
+    <defs>
+        <filter id="roughColor" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="turbulence" baseFrequency="0.25,.001" numOctaves="1" result="noise" />
+            <feFlood flood-color="#543736" result="col" />
+            <feComposite in="col" in2="noise" operator="in" />
+        </filter>
+    </defs>
+</svg>
+
+</body>
+
+<script src="/Puzzle Play/app.js"></script>
+</html>
