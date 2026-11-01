@@ -55,7 +55,7 @@ Whether you're looking for cutting-edge **3D Canvas physics**, **Liquid Glassmor
 
 ---
 
-## 📁 Detailed Project & Directory Catalog (35 Modules)
+## 📁 Detailed Project & File Structure (35 Modules Catalog)
 
 An organized guide to all folders and creative code packages inside this repository:
 
